@@ -1,0 +1,10 @@
+{% extends "employer/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<article class="media content-section">
+    <div class="media-body">
+        <h5>You are currently logged in as:</h4>
+        <h1> {{ user.username }}</h1>
+    </div>
+</article>
+{% endblock content %}

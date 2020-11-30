@@ -1,0 +1,18 @@
+{% extends "employer/base.html" %}
+{% block content %}
+{% for job in jobs %}
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+            <a class="mr-2">{{ job.companyname  }}</a>
+            <small class="text-muted">{{ job.jobplace }} Posted on {{ job.dateposted|date:"F d, Y" }} by {{ job.author }}</small>
+        </div>
+        <h2><a class="article-title" href="{% url 'jobs-detail' job.id %}" name="jobno{{ job.id }}">{{ job.jobprofile }}</a></h2>
+        <p class="article-content">{{ job.experience }}</p>
+        <p class="article-content">{{ job.jobdescription }}</p>
+        <p class="article-content">{{ job.contact }}</p>
+        <p class="article-content">{{ job.email }}</p>
+    </div>
+</article>
+{% endfor %}
+{% endblock content%}
